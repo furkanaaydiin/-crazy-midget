@@ -11,15 +11,6 @@ public class enemy : MonoBehaviour
     [SerializeField] public float mesafe;
     Vector3 newPosition;
     [SerializeField] public GameObject player;
-    [SerializeField] GameObject enemy1;
-    [SerializeField] GameObject enemy2;
-    [SerializeField] GameObject enemy3;
-    [SerializeField] GameObject enemy4;
-
-
-
-    
-
     void Start()
     {
         
@@ -27,8 +18,6 @@ public class enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>(); 
         
     }
-
-   
     void Update()
     {
          enemyanim.SetFloat("hız",agent.velocity.magnitude );     

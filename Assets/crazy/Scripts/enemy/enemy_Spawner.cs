@@ -36,7 +36,7 @@ void Update()
          newenemy = Instantiate(newenemy,spawner.position,player.rotation);
          enemy createdenemy = newenemy.GetComponent<enemy>();
          createdenemy.hedef = player;
-         newenemy.transform.SetParent(transform);
+         //newenemy.transform.SetParent(transform);
 
          
     }
