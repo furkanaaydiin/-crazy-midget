@@ -10,7 +10,14 @@ public class enemy : MonoBehaviour
     NavMeshAgent  agent;
     [SerializeField] public float mesafe;
     Vector3 newPosition;
-    [SerializeField] public GameObject player;
+
+    [SerializeField] public GameObject[] splash = new GameObject[4];
+
+    public GameObject splashRed;
+    public GameObject splashYellow;
+    public GameObject splashBlue;
+    public GameObject splashPurple;
+    
     void Start()
     {
         
@@ -22,15 +29,24 @@ public class enemy : MonoBehaviour
     {
          enemyanim.SetFloat("hız",agent.velocity.magnitude );     
          mesafe = Vector3.Distance(transform.position , hedef.position);
-         
-         player.transform.position = newPosition;
         
         agent.destination = hedef.position;
           if(mesafe <= 100)
          {
               agent.enabled = true;
          }
+         
         
+    }
+
+    void SplashRandom()
+    {
+
+        splash[0] = splashRed;
+        splash[1] = splashYellow;
+        splash[2] = splashBlue;
+        splash[3] = splashPurple;
+    
     }
 
     
