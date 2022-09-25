@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dance
   - enemy
+  - coin
   layers:
   - Default
   - TransparentFX
