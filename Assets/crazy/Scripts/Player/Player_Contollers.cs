@@ -14,6 +14,8 @@ public class Player_Contollers : MonoBehaviour
     [SerializeField] public GameObject restartButton;
     [SerializeField] public  GameObject goldPrefab;
     [SerializeField] public GameObject panel;
+    [SerializeField] public int coin;
+    [SerializeField] Text coinText; 
 
 
 
@@ -36,12 +38,15 @@ private void OnTriggerEnter(Collider col)
             }
 
          }
-   // if(col.gameObject.CompareTag("coin"))
-   // {
-   //    Destroy(col.gameObject);
+    if(col.gameObject.CompareTag("coin"))
+    {
+         coin++;
+         coinText.text = coin.ToString();
+          Destroy(col.gameObject);
+          return;
    //    Instantiate(goldPrefab,Camera.main.WorldToScreenPoint(transform.position),panel.transform.rotation,panel.transform);
       
-   // }
+   }
  }
  public void RestartButoon()
 {

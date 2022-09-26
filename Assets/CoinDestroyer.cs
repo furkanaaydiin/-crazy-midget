@@ -21,9 +21,8 @@ public void CoinSpawned(Vector3 enemyConinPos)
     
    transform.parent = null;
    transform.position = new Vector3(enemyConinPos.x,0.200f,enemyConinPos.z);
-   transform.localScale = Vector3.zero;
    coin. transform.DOJump(enemyConinPos,0.5f,1,1);
-   coin.transform.DOScale(Vector3.one * 0.09f,1f).SetEase(Ease.Linear).SetLoops(1,LoopType.Yoyo); 
+   coin.transform.DOScale(Vector3.one * 0.09f,1f).SetEase(Ease.Linear).SetLoops(-1,LoopType.Yoyo); 
    
 }
 
