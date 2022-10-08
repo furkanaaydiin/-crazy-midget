@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DanceFollow : MonoBehaviour
+namespace crazy.Chacter.Dance_Chacter
 {
-
-    [SerializeField] public GameObject player;
-      void Update()
+    public class DanceFollow : MonoBehaviour
     {
-        gameObject.transform.LookAt(player.transform);
+
+        [SerializeField] public GameObject player;
+        void Update()
+        {
+            gameObject.transform.LookAt(player.transform);
        
 
+        }
     }
 }

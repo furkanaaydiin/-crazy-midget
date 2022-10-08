@@ -1,54 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemy : MonoBehaviour
+namespace crazy.Scripts.enemy
 {
-    Animator enemyanim;
-    [SerializeField] public Transform hedef;
-    NavMeshAgent  agent;
-    [SerializeField] public float mesafe;
-    Vector3 newPosition;
-
-    [SerializeField] public GameObject[] splash = new GameObject[4];
-
-    public GameObject splashRed;
-    public GameObject splashYellow;
-    public GameObject splashBlue;
-    public GameObject splashPurple;
-    
-    void Start()
+    public sealed class Enemy : MonoBehaviour
     {
+        private Animator enemyAnim;
+        [SerializeField] public Transform playerAim;
+        private NavMeshAgent  agent;
+        [SerializeField] public float distance;
+        private static readonly int Hız = Animator.StringToHash("hız");
+
+        private void Start()
+        {
         
-        enemyanim = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>(); 
+            enemyAnim = GetComponent<Animator>();
+            agent = GetComponent<NavMeshAgent>(); 
         
-    }
-    void Update()
-    {
-         enemyanim.SetFloat("hız",agent.velocity.magnitude );     
-         mesafe = Vector3.Distance(transform.position , hedef.position);
+        }
+
+        private void Update()
+        {
+            enemyAnim.SetFloat(Hız,agent.velocity.magnitude );
+            var position = playerAim.position;
+            distance = Vector3.Distance(transform.position , position);
         
-        agent.destination = hedef.position;
-          if(mesafe <= 100)
-         {
-              agent.enabled = true;
-         }
+            agent.destination = position;
+            if(distance <= 100)
+            {
+                agent.enabled = true;
+            }
          
         
+        }
+      
+        
     }
-
-    void SplashRandom()
-    {
-
-        splash[0] = splashRed;
-        splash[1] = splashYellow;
-        splash[2] = splashBlue;
-        splash[3] = splashPurple;
     
-    }
-
     
-  
 }
+

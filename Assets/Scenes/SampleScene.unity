@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5ccc8237d2dad4da88b281bd53340d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 1
+  startTime: 0.4
   enemy:
   - {fileID: 2391579466821646938, guid: 137960edd3882cd4e8ee0b7a1a142d68, type: 3}
   - {fileID: 8797059453275122109, guid: b7bba4d2986ea8547b2a2edbc382b991, type: 3}
@@ -1014,10 +1014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660a8fb77c2b37a4d8dfac5e829ca917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pouseButton: {fileID: 2004467295}
+  pauseButton: {fileID: 2004467295}
   playButton: {fileID: 213411816}
   quitButton: {fileID: 2031024734}
-  joistick: {fileID: 332140009}
+  joystick: {fileID: 332140009}
+  player: {fileID: 1089570350}
 --- !u!4 &819119893
 Transform:
   m_ObjectHideFlags: 0
@@ -1161,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splash: {fileID: 8505996121117437858, guid: c4c2925f7cf22214ea9de0cf47ea0f04, type: 3}
-  coinSplesh: {fileID: 5300054962181450811, guid: 4df68716fbb8e4041a90fe58b92cdd89, type: 3}
+  coinSplash: {fileID: 5300054962181450811, guid: 4df68716fbb8e4041a90fe58b92cdd89, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.000000010589634, y: 0.9514757, z: -0.30772406, w: -0.000000032742907}
+  m_LocalRotation: {x: 0.000000010589634, y: 0.9514757, z: -0.30772406, w: 0.000000032742907}
   m_LocalPosition: {x: 0, y: 1.748, z: 1.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1398,11 +1399,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cdacdceea1e5348aca00fd8ada30bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 8050929322014777065}
-  _rigidbody: {fileID: 1089570352}
+  animator: {fileID: 8050929322014777065}
+  rigidbody: {fileID: 1089570352}
   joystick: {fileID: 1489691681}
-  movementspeed: 1
-  rotationspeed: 5
+  movementSpeed: 1
+  rotationSpeed: 500
 --- !u!114 &1089570355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1430,8 +1431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartButton: {fileID: 1628150075}
-  goldPrefab: {fileID: 1420174697586580084, guid: 4df68716fbb8e4041a90fe58b92cdd89, type: 3}
-  panel: {fileID: 102223499}
   coin: 0
   coinText: {fileID: 175928172}
 --- !u!1 &1159563569
@@ -1814,8 +1813,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1089570356}
-        m_TargetAssemblyTypeName: Player_Contollers, Assembly-CSharp
-        m_MethodName: RestartButoon
+        m_TargetAssemblyTypeName: crazy.Scripts.Player.PlayerControls, Assembly-CSharp
+        m_MethodName: RestartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2119,7 +2118,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844413382}
-  m_LocalRotation: {x: -0.000000010589634, y: 0.9514757, z: -0.30772406, w: -0.000000032742907}
+  m_LocalRotation: {x: 0.000000010589634, y: 0.9514757, z: -0.30772406, w: 0.000000032742907}
   m_LocalPosition: {x: 0, y: 1.748, z: 1.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
