@@ -10,17 +10,11 @@ namespace crazy.Scripts.Player
         [SerializeField] private Joystick joystick;
         [SerializeField] private float movementSpeed;
         [SerializeField] private float rotationSpeed = 500;
-        private Touch touch;
-        private Vector3 touchDown;
-        private Vector3 touchUp;
-        private bool dragStarted;
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
-
         private void Awake()
         {
             rigidbody = GetComponent<Rigidbody>();
         }
-
         protected virtual void FixedUpdate()
         {
             if(joystick.Direction.magnitude > 0.1f){

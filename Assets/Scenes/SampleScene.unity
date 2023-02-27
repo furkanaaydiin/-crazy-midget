@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 93497857}
   - component: {fileID: 93497858}
   m_Layer: 0
-  m_Name: spawer
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -828,6 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2655,15 +2656,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7169761840415712927, guid: f875dfc559b8d7348af961f7b47bc12a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7169761840415712927, guid: f875dfc559b8d7348af961f7b47bc12a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7169761840415712927, guid: f875dfc559b8d7348af961f7b47bc12a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7169761840415712927, guid: f875dfc559b8d7348af961f7b47bc12a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2679,7 +2680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551354345566075941, guid: f875dfc559b8d7348af961f7b47bc12a, type: 3}
       propertyPath: m_Name
-      value: 3DHuman.fbx
+      value: Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f875dfc559b8d7348af961f7b47bc12a, type: 3}

@@ -6,23 +6,19 @@ namespace crazy.Scripts.enemy
 {
     public sealed class Enemy : MonoBehaviour
     {
-        private Animator enemyAnim;
         [SerializeField] public Transform playerAim;
+        [SerializeField] private float distance;
+        private static readonly int EnemySpeed = Animator.StringToHash("EnemySpeed");
         private NavMeshAgent  agent;
-        [SerializeField] public float distance;
-        private static readonly int Hız = Animator.StringToHash("hız");
-
+        private Animator enemyAnim;
         private void Start()
         {
-        
             enemyAnim = GetComponent<Animator>();
-            agent = GetComponent<NavMeshAgent>(); 
-        
+            agent = GetComponent<NavMeshAgent>();
         }
-
         private void Update()
         {
-            enemyAnim.SetFloat(Hız,agent.velocity.magnitude );
+            enemyAnim.SetFloat(EnemySpeed,agent.velocity.magnitude );
             var position = playerAim.position;
             distance = Vector3.Distance(transform.position , position);
         
@@ -31,8 +27,7 @@ namespace crazy.Scripts.enemy
             {
                 agent.enabled = true;
             }
-         
-        
+            
         }
       
         
